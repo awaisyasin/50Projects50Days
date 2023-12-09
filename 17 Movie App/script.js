@@ -11,8 +11,15 @@ const IMG_API = "https://image.tmdb.org/t/p/w1280"
 searchForm.addEventListener("submit", (e) => {
     e.preventDefault()
     const searchQuery = searchEl.value
-    searchEl.value = ""
-    const SEARCH_URL = SEARCH_API + searchQuery
+
+    if (searchQuery && searchQuery !== " ") {
+        const SEARCH_URL = SEARCH_API + searchQuery
+        searchMovies(SEARCH_URL)
+        searchEl.value = ""
+    }
+    else {
+        window.location.reload()
+    }
 
     //Seraching the movies
     searchMovies(SEARCH_URL)
