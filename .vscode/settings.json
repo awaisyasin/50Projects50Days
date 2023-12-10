@@ -1,0 +1,11 @@
+{
+    "prettier.insertPragma": false,
+    "prettier.requirePragma": false,
+    "prettier.bracketSameLine": false,
+    "prettier.bracketSpacing": false,
+    "prettier.semi": false,
+    "prettier.useTabs": false,
+    "prettier.vueIndentScriptAndStyle": false,
+    "prettier.tabWidth": 4,
+    "editor.detectIndentation": true
+}
