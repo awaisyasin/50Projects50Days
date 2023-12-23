@@ -56,7 +56,7 @@ function generatePassword(upper, lower, number, symbol, length) {
         })
     }
 
-    const finalPassword = generatedPassword.slice(0, length)
+    const finalPassword = shuffle(generatedPassword.slice(0, length))
     return finalPassword
 }
 
@@ -76,4 +76,16 @@ function getRandomSymbol() {
     const symbols = "!@#$%^&*(){}[]=<>/,."
 
     return symbols[Math.floor(Math.random() * symbols.length)]
+}
+
+const shuffle = (str) => {
+    const charList = str.split("")
+    let shuffledString = ""
+    while(charList.length > 0) {
+        const randomIdx = Math.floor(Math.random() * charList.length)
+        shuffledString += charList[randomIdx]
+        charList.splice(randomIdx, 1)
+    }
+
+    return shuffledString
 }
